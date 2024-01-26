@@ -4,12 +4,12 @@ Follow these steps to run the project:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/egemenyildirim90/vero-test-task.git
+   git clone https://github.com/egemenyildirim90/vero-task.git
    ```
 
 2. Change your directory to the root folder:
    ```bash
-   cd vero-test-task
+   cd verotask
    ```
 
 3. Review the `.env.sample` file to check if any default variables need to be modified. Proceed if no changes are needed.
