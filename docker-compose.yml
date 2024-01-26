@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mssql-server:
+    build: ./MSSQL
+    ports:
+      - "${MSSQL_PORT:-1433}:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SA_PASSWORD:-Un!q@to2023} 
+    healthcheck:
+      test: [ "CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P ${SA_PASSWORD:-Un!q@to2023} -Q 'SELECT 1'" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+      
+  api:
+    build: ./API
+    ports:
+      - "${API_PORT:-80}:80"
+    depends_on:
+      mssql-server:
+        condition: service_healthy
+
