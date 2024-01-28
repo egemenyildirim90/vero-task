@@ -9,7 +9,7 @@ Follow these steps to run the project:
 
 2. Change your directory to the root folder:
    ```bash
-   cd verotask
+   cd vero-task
    ```
 
 3. Review the `.env.sample` file to check if any default variables need to be modified. Proceed if no changes are needed.
